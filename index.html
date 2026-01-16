@@ -5,48 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MarsPhobos SMP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fi onts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <img src="638598725500886388.png" alt="Server icon" />
+          <span>MarsPhobos SMP</span>
+        </div>
+        <nav class="topbar__nav">
+          <a href="#join">Server</a>
+          <a href="#overview">Modpack</a>
+          <a href="#rules">Rules</a>
+        </nav>
+      </header>
       <section class="hero">
         <div class="hero__overlay"></div>
         <div class="hero__content">
-          <div class="brand">
-            <img class="brand__icon" src="638598725500886388.png" alt="Server icon" />
-            <div class="brand__text">
-              <p class="brand__label">NeoForge 1.21.1</p>
-              <h1>MarsPhobos SMP</h1>
+          <div class="hero__panel">
+            <div class="brand">
+              <img class="brand__icon" src="638598725500886388.png" alt="Server icon" />
+              <div class="brand__text">
+                <p class="brand__label">NeoForge 1.21.1</p>
+                <h1>MarsPhobos SMP</h1>
+              </div>
             </div>
-          </div>
 
-          <p class="hero__tagline">
-            A Create 6.0 focused, Vanilla+ survival experience with a steady economy, clear rules, and active staff.
-          </p>
+            <p class="hero__tagline">
+              A Create 6.0 focused, Vanilla+ survival experience with a steady economy, clear rules, and active staff.
+            </p>
 
-          <div class="hero__stats">
-            <div class="hero__stat">
-              <span>Mod Count</span>
-              <strong>103</strong>
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span>Mod Count</span>
+                <strong>103</strong>
+              </div>
+              <div class="hero__stat">
+                <span>Server IP</span>
+                <strong>144.34.87.148:25565</strong>
+              </div>
+              <div class="hero__stat">
+                <span>RAM Allocation</span>
+                <strong>8+ GB</strong>
+              </div>
             </div>
-            <div class="hero__stat">
-              <span>Server IP</span>
-              <strong>144.34.87.148:25565</strong>
-            </div>
-            <div class="hero__stat">
-              <span>RAM Allocation</span>
-              <strong>8+ GB</strong>
-            </div>
-          </div>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#join">Join Discord</a>
-            <a class="btn btn--ghost" href="#overview">Modpack Overview</a>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#join">Join Discord</a>
+              <a class="btn btn--ghost" href="#overview">Modpack Overview</a>
+            </div>
           </div>
         </div>
       </section>
@@ -120,14 +133,6 @@
             <span class="stat__value" id="stat-players">Loading...</span>
           </div>
           <div class="stat">
-            <span class="stat__label">Latency</span>
-            <span class="stat__value" id="stat-latency">Loading...</span>
-          </div>
-          <div class="stat">
-            <span class="stat__label">Version</span>
-            <span class="stat__value" id="stat-version">Loading...</span>
-          </div>
-          <div class="stat">
             <span class="stat__label">Game Time</span>
             <span class="stat__value" id="stat-time">Loading...</span>
           </div>
@@ -143,11 +148,8 @@
         </article>
       </section>
 
-      <section class="panel" id="overview">
-        <div class="panel__media">
-          <img src="Create-Mod-1.jpg" alt="Server banner" />
-        </div>
-        <div class="panel__content">
+      <section class="overview" id="overview">
+        <div class="overview__content">
           <h2>Modpack Overview</h2>
           <p>
             This is an updated lightweight, Create 6.0 focused modpack for Minecraft 1.21.1 put together by
@@ -155,6 +157,9 @@
             The pack is designed to create a Vanilla+ experience centered on Create and a fully immersive world, with
             quality of life mods for inventory, storage, villages, food, and more while keeping a vanilla style of play.
           </p>
+        </div>
+        <div class="overview__logo">
+          <img src="Create-Mod-1.jpg" alt="Create modpack logo" />
         </div>
       </section>
 
