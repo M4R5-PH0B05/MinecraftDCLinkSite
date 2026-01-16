@@ -8,7 +8,4 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
-      - ./styles.css:/usr/share/nginx/html/styles.css:ro
-      - ./Create-Mod-1.jpg:/usr/share/nginx/html/Create-Mod-1.jpg:ro
-      - ./638598725500886388.png:/usr/share/nginx/html/638598725500886388.png:ro
+      - ./site:/usr/share/nginx/html:ro
