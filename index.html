@@ -38,7 +38,7 @@
             </div>
 
             <p class="hero__tagline">
-              A Create 6.0 focused, Vanilla+ survival experience with a steady economy, clear rules, and active staff.
+              A Create 6.0 focused, Vanilla+ survival experience with a strong playerbase, clear rules, and active staff.
             </p>
 
             <div class="hero__stats">
@@ -74,9 +74,6 @@
             <span class="stat__label">Server IP</span>
             <span class="stat__value">144.34.87.148:25565</span>
           </div>
-          <div class="stat">
-            <span class="stat__label">Discord</span>
-            <span class="stat__value">discord.gg/marsphobos</span>
           </div>
           <div class="stat">
             <span class="stat__label">Platform</span>
@@ -127,7 +124,6 @@
 
         <article class="card">
           <h2>Live Status</h2>
-          <p class="muted">Updated on page load.</p>
           <div class="stat">
             <span class="stat__label">Players</span>
             <span class="stat__value" id="stat-players">Loading...</span>
@@ -158,14 +154,12 @@
             quality of life mods for inventory, storage, villages, food, and more while keeping a vanilla style of play.
           </p>
         </div>
-        <div class="overview__logo">
-          <img src="Create-Mod-1.jpg" alt="Create modpack logo" />
         </div>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h2>Discord HQ</h2>
+          <h2>Discord</h2>
           <p>Join the server for verification, support, and announcements.</p>
           <div class="discord-widget">
             <iframe
@@ -204,6 +198,7 @@
     </main>
     <script>
       const STATUS_ENDPOINT = "https://mc-auth.marsphobos.com/v1/web-status";
+      const MCSTATUS_ENDPOINT = "https://api.mcstatus.io/v2/status/java/144.34.87.148:25565";
 
       function formatGameTime(day, timeOfDay) {
         if (typeof day !== "number" || typeof timeOfDay !== "number") {
@@ -215,12 +210,21 @@
         return `Day ${day}, ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
       }
 
-      function updatePanel(data) {
-        const players = data.players?.online ?? 0;
-        const max = data.players?.max ?? 0;
-        const latency = typeof data.latency === "number" ? data.latency : null;
-        const version = data.version ?? "Unknown";
+      function updatePanel(data, mcstatus) {
         const names = data.players?.list ?? [];
+        const players = names.length ? names.length : data.players?.online ?? 0;
+        const max = mcstatus?.players?.max ?? data.players?.max ?? 0;
+        const latency =
+          typeof mcstatus?.latency === "number"
+            ? mcstatus.latency
+            : typeof data.latency === "number"
+            ? data.latency
+            : null;
+        const version =
+          mcstatus?.version?.name_clean ??
+          mcstatus?.version?.name ??
+          data.version ??
+          "Unknown";
 
         document.getElementById("stat-players").textContent =
           max ? `${players}/${max}` : `${players}`;
@@ -243,12 +247,16 @@
 
       async function fetchStatus() {
         try {
-          const res = await fetch(STATUS_ENDPOINT);
-          if (!res.ok) {
+          const [statusRes, mcRes] = await Promise.all([
+            fetch(STATUS_ENDPOINT),
+            fetch(MCSTATUS_ENDPOINT),
+          ]);
+          if (!statusRes.ok) {
             throw new Error("Status fetch failed");
           }
-          const data = await res.json();
-          updatePanel(data);
+          const data = await statusRes.json();
+          const mcstatus = mcRes.ok ? await mcRes.json() : null;
+          updatePanel(data, mcstatus);
         } catch {
           document.getElementById("stat-players").textContent = "Unavailable";
           document.getElementById("stat-latency").textContent = "Unavailable";
