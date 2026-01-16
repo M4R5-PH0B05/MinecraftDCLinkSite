@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:opsz,wght@6..72,300;6..72,500;6..72,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -26,21 +26,36 @@
           </div>
 
           <p class="hero__tagline">
-            A focused survival world with real progression, tight moderation, and a Discord-first community.
+            A Create 6.0 focused, Vanilla+ survival experience with a steady economy, clear rules, and active staff.
           </p>
 
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span>Mod Count</span>
+              <strong>103</strong>
+            </div>
+            <div class="hero__stat">
+              <span>Server IP</span>
+              <strong>144.34.87.148:25565</strong>
+            </div>
+            <div class="hero__stat">
+              <span>RAM Allocation</span>
+              <strong>8+ GB</strong>
+            </div>
+          </div>
+
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#join">Join Now</a>
-            <a class="btn btn--ghost" href="#rules">Rules & Info</a>
+            <a class="btn btn--primary" href="#join">Join Discord</a>
+            <a class="btn btn--ghost" href="#overview">Modpack Overview</a>
           </div>
         </div>
       </section>
 
       <section class="grid" id="join">
         <article class="card card--glow">
-          <h2>Join the Realm</h2>
+          <h2>Server Details</h2>
           <p>
-            Link your account in Discord to unlock full access. New arrivals are guided in-game until verified.
+            Access is managed through Discord. Verify your account to unlock full access and support.
           </p>
           <div class="stat">
             <span class="stat__label">Server IP</span>
@@ -54,6 +69,47 @@
             <span class="stat__label">Platform</span>
             <span class="stat__value">Java Edition</span>
           </div>
+          <div class="stat">
+            <span class="stat__label">RAM Allocation</span>
+            <span class="stat__value">8+ GB recommended</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Modpack Info</h2>
+          <p class="muted">CurseForge release details.</p>
+          <div class="stat">
+            <span class="stat__label">Game Version</span>
+            <span class="stat__value">1.21.1</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Modloader</span>
+            <span class="stat__value">NeoForge - 21.1.209</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Latest Release</span>
+            <span class="stat__value">12/17/2025</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Pack Focus</span>
+            <span class="stat__value">Create 6.0</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Primary Mods</h2>
+          <ul class="tag-list">
+            <li>Create</li>
+            <li>Create: Stuff and Additions</li>
+            <li>Create: Enchantment Industries</li>
+            <li>Create: Copycats+</li>
+            <li>Farmers Delight</li>
+            <li>Macaw's Bridges, Trapdoors and Doors</li>
+            <li>Sophisticated Backpacks</li>
+            <li>JEI</li>
+            <li>Storage Drawers</li>
+            <li>Performance optimizations</li>
+          </ul>
         </article>
 
         <article class="card">
@@ -87,27 +143,25 @@
         </article>
       </section>
 
-      <section class="panel" id="rules">
+      <section class="panel" id="overview">
         <div class="panel__media">
           <img src="Create-Mod-1.jpg" alt="Server banner" />
         </div>
         <div class="panel__content">
-          <h2>Start Clean. Stay Sharp.</h2>
+          <h2>Modpack Overview</h2>
           <p>
-            Respect builds, avoid griefing, and keep voice chat civil. We keep the world smooth and the rules short.
+            This is an updated lightweight, Create 6.0 focused modpack for Minecraft 1.21.1 put together by
+            MrBeardstone. It is the official pack used in the Create: Perfect World - Post Production YouTube series.
+            The pack is designed to create a Vanilla+ experience centered on Create and a fully immersive world, with
+            quality of life mods for inventory, storage, villages, food, and more while keeping a vanilla style of play.
           </p>
-          <div class="rules">
-            <span>01. No griefing or theft.</span>
-            <span>02. No x-ray or unfair mods.</span>
-            <span>03. Be respectful in chat and VC.</span>
-          </div>
         </div>
       </section>
 
       <section class="grid">
         <article class="card">
           <h2>Discord HQ</h2>
-          <p>Hop in and register to unlock full access.</p>
+          <p>Join the server for verification, support, and announcements.</p>
           <div class="discord-widget">
             <iframe
               src="https://ptb.discord.com/widget?id=1461456941367693529&theme=dark"
@@ -120,22 +174,27 @@
           </div>
         </article>
         <article class="card">
-          <h2>What to Expect</h2>
-          <ul class="list">
-            <li>Seasonal economy with curated events.</li>
-            <li>Hard-mode survival, no pay-to-win.</li>
-            <li>Active staff and a living world map.</li>
-            <li>Discord roles reflected in-game.</li>
-          </ul>
+          <h2 id="rules">Server Rules</h2>
+          <ol class="rules-list">
+            <li>Be respectful. No harassment, hate speech, slurs, or excessive toxicity.</li>
+            <li>No griefing or stealing. Do not destroy builds, take items, or modify areas without permission.</li>
+            <li>No cheating or exploiting. Hacks, x-ray, dupes, or glitch abuse are not allowed.</li>
+            <li>Keep chat appropriate. No spamming, advertising, or excessive swearing.</li>
+            <li>Respect builds and land claims. Do not build too close to others or inside claimed areas.</li>
+            <li>PvP only by agreement. No random killing without consent.</li>
+            <li>Use common sense. If it harms the experience, do not do it.</li>
+            <li>Follow staff instructions. Staff decisions are final; handle disputes in DMs.</li>
+            <li>Have fun.</li>
+          </ol>
         </article>
       </section>
 
       <section class="cta">
         <div class="cta__content">
-          <h2>Ready to lock in?</h2>
-          <p>Jump in, register in Discord, and start building your story.</p>
+          <h2>Need help getting set up?</h2>
+          <p>Check the Discord help channel for install and RAM allocation guidance.</p>
         </div>
-        <a class="btn btn--primary" href="#join">Copy IP</a>
+        <a class="btn btn--primary" href="#join">View Server Details</a>
       </section>
     </main>
     <script>
@@ -154,14 +213,14 @@
       function updatePanel(data) {
         const players = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
-        const latency = data.latency ?? "—";
+        const latency = typeof data.latency === "number" ? data.latency : null;
         const version = data.version ?? "Unknown";
         const names = data.players?.list ?? [];
 
         document.getElementById("stat-players").textContent =
           max ? `${players}/${max}` : `${players}`;
         document.getElementById("stat-latency").textContent =
-          latency === "—" ? "—" : `${latency} ms`;
+          latency === null ? "Unknown" : `${latency} ms`;
         document.getElementById("stat-version").textContent = version;
         document.getElementById("stat-time").textContent = formatGameTime(
           data.day,
@@ -171,9 +230,9 @@
 
         const list = document.getElementById("stat-list");
         if (names.length) {
-          list.textContent = names.map((name) => `🟢 ${name}`).join(", ");
+          list.textContent = names.join(", ");
         } else {
-          list.textContent = "🔴 None";
+          list.textContent = "None";
         }
       }
 
